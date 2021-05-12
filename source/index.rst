@@ -8,7 +8,9 @@ If you want to participate in this public project or have other ideas, please co
 .. toctree::
    :maxdepth: 1
 
-   faq/how_to_participation
+   how_to_participation
+   
+   Contibutor
 
 .. toctree::
    :maxdepth: 3

@@ -1,7 +1,7 @@
 ## 如何参与该文档的开发
 
-我们鼓励每一个记录下在做项目时所遇到的问题，并将其分享出去.
-当再次遇到该问题时，可以来FAQ查找，看看是否有相似问题...
+我们鼓励每一个程序员记录一下项目中所遇到的trustonic_tee相关问题，并将其分享出去.
+当下次有人遇到问题时，可以来FAQ查找，看看是否有相同或相似问题...
 
 
 #### 1、拉取文档源码
@@ -33,9 +33,7 @@ make html
 #### 4、贡献自己的修改
 
 文档的源码都在source目录下，以md文件为主。你可以添加自己的文件，或在原有的文件上修改.
-修改之后在github上发起pull request
+修改之后在github上发起pull request. 等待owner的review和merge
 
-等待owner merge后，内容合到主干。
-
-然后一天一次，该文档会被自动同步到readthedocs上
-readthedocs URL ： https://trustonic-faq.readthedocs.io/en/latest/
+该github repository已托管到readthedocs，该文档一天一次会被自动同步到readthedocs上
+[readthedocs链接点击此处](https://trustonic-faq.readthedocs.io/en/latest/)

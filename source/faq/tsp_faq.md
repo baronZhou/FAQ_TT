@@ -3,11 +3,11 @@
 
 #### Trustonic TEE、TSP(Trusted Secured Platform)介绍？
 
-[点击此处-Trustonic Trusted Execution Environment - youtube视频](https://www.youtube.com/watch?v=K7M63z0vCm0)
+> [点击此处-Trustonic Trusted Execution Environment - youtube视频](https://www.youtube.com/watch?v=K7M63z0vCm0)
 
 #### TAP(Trustonic Application Protection)介绍？
 
-[点击此处-Trustonic Application Protection (TAP) Overview - youtube视频](https://www.youtube.com/watch?v=Zh7jpH96wQ8&t=79s)
+> [点击此处-Trustonic Application Protection (TAP) Overview - youtube视频](https://www.youtube.com/watch?v=Zh7jpH96wQ8&t=79s)
 
 #### 如何开启trustonic_tee？
 
@@ -73,9 +73,33 @@ MTK_TEE_DRAM_SIZE=0x1740000（根据你自己的TA来调整）
 CONFIG_TEE=y 否则无法编译到gud driver
 ```
 
-#### 如何通过log确定trustonic tee启动OK？
+#### 如何确认trustonic tee启动OK？
+
+**(1)、通过log确认**
+
+在Kernel log中搜索`Trustonic TEE`关键字，看是否有异常
+
+
+**(2)、通过log确认**
+
+查看进程是否起来
+```c
+ps -ef | grep mcDriverDaemon
+```
+
+**(3)、通过密码锁**
+
+设置图案锁或密码锁，然后解锁测试
+
 
 #### MTK平台上使用Trustonic TEE调试指纹的步骤？
+
+- 开启trustonic_tee宏，编译能通过，能开机<br>
+- trustonic release internal目录(SDK)给 oem，oem将此目录放入到`vendor/mediatek/proprietary/trustzone/trustonic/`路径下<br>
+- oem检查spi驱动的完整性，如不完整，需向MTK申请spi patch<br>
+- 在以上步骤完成后，oem编译出spi drv lib库，oem将这些库release给指纹厂商<br>
+- 指纹厂商编译出drvlib和talib，release给OEM<br>
+- oem将drvlib和talib合入到代码中<br>
 
 #### 如何使用Trustonic TEE SDK编译TA？
 
@@ -89,12 +113,15 @@ MTK代码中，默认使用虚拟RPMB(即persist分区)，如需开启实体RPMB
 
 #### 如何客制化googlekey？
 
-[请参考csdn的这篇博客](https://blog.csdn.net/weixin_42135087/article/details/106761192)
+> [请参考csdn的这篇博客](https://blog.csdn.net/weixin_42135087/article/details/106761192)
 
 #### googlekey安装失败了怎么办？
 
-请确保EKKB_PUB和PKB已修改你们自己的数组。路径:
-> vendor/mediatek/proprietary/trustzone/trustonic/source/bsp/common/500/t-sdk/TlSdk/Out/Bin/KeyReplace/test_key.cfg
+请确保`test_key.cfg`文件中的`EKKB_PUB`和`PKB`的数组已替换成你们自己的了
+```c
+(vendor/mediatek/proprietary/trustzone/trustonic/source/bsp/common/500/t-sdk/TlSdk/Out/Bin/KeyReplace/test_key.cfg)
+
+```
 
 
 
