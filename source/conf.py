@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'zhouhehe_test'
-copyright = '2021, 周贺贺'
+project = 'Trustonic FAQ'
+copyright = '2021, 周贺贺, wechat : coding_the_world'
 author = '周贺贺'
 
 # The full version, including alpha/beta/rc tags
