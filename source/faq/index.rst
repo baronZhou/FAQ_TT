@@ -1,5 +1,5 @@
 Frequetlty Asked Questions
-####################
+#################################
 
 .. toctree::
    :maxdepth: 2
